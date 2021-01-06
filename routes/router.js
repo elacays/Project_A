@@ -1,10 +1,13 @@
-var routeIndex = require('./indexRouter');
-var routeRules = require('./rulesRouter');
-var routeTest = require('./testRouter');
+const routeIndex = require('./indexRouter');
+const routeRules = require('./rulesRouter');
+const routeTest = require('./testRouter');
+const routeAuth = require('./authRouter');
 
-//fonksiyonla app.js de çağırılıyor.
+//Sayfa yönlendirmeleri yapılıyor.fonksiyonla app.js de çağırılıyor.
 module.exports = function (app) {
     app.use('/', routeIndex);
     app.use('/rules', routeRules);
     app.use('/test', routeTest);
+    app.use('/register', routeAuth);
+    app.use('/login', routeIndex);
 }

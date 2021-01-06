@@ -1,12 +1,13 @@
 // server.js
-var express = require('express');
-var app = express();
-var port = 8080;
-var path = require('path');
+const express = require('express');
+const app = express();
+const port = 8080;
+const path = require('path');
 
-var db = require('./models/db');
-var ejsLayouts = require("express-ejs-layouts")
-var bodyparser = require('body-parser');
+const db = require('./models/db');
+const ejsLayouts = require("express-ejs-layouts")
+const bodyparser = require('body-parser');
+
 
 
 
@@ -20,6 +21,7 @@ app.listen(port, function () {
 //sayfa modülleri için ejsLayouts eklendi.
 app.use(ejsLayouts);
 
+//verinin işe yarar kısmını kullanabilmek için body parser kullanılıyor
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 

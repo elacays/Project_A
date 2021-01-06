@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-
+const dotenv = require('dotenv');
 mongoose.Promise = require('bluebird');
 
-const mongoDb = 'mongodb+srv://admin:123@elacays.xldbi.mongodb.net/projectAdb?retryWrites=true&w=majority';
+dotenv.config();
 
-mongoose.connect(mongoDb, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then((result) => console.log('baglantı kuruldu'))
+mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then((result) => console.log('mongodb baglantısı kuruldu'))
     .catch((err) => console.log(err));
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);

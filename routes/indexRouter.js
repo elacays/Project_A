@@ -1,12 +1,12 @@
-var express = require('express')
+const express = require('express')
 
-var router = express.Router();
+const router = express.Router();
 
 //indexController Çağrılıyor
-var ctrlIndex = require('../controllers/indexController');
+const ctrlIndex = require('../controllers/indexController');
 
 
 router.get('/', ctrlIndex.index);
-router.post('/', ctrlIndex.indexPost);
+router.post('/', ctrlIndex.login);
 
 module.exports = router;

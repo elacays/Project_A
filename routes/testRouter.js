@@ -1,8 +1,8 @@
-var express = require('express')
+const express = require('express')
 
-var router = express.Router();
+const router = express.Router();
 
-var ctrlTest = require('../controllers/testController');
+const ctrlTest = require('../controllers/testController');
 
 router.get('/', ctrlTest.index);
 
