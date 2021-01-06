@@ -5,7 +5,7 @@ mongoose.Promise = require('bluebird');
 dotenv.config();
 
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then((result) => console.log('mongodb baglantısı kuruldu'))
+    .then((result) => console.log('Connected MongoDB!'))
     .catch((err) => console.log(err));
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);

@@ -26,7 +26,8 @@ module.exports.register = async function (req, res) {
     });
     try {
         const savedUser = await user.save();
-        res.send(savedUser);
+        console.log(req.body.name + " Kullanıcısı Kaydedildi.")
+        //res.send(savedUser);
 
     } catch (err) {
         res.status(400).send(err);
