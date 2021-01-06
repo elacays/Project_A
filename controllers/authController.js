@@ -5,14 +5,14 @@ const bcrypt = require('bcryptjs');
 
 //!!!--------Register--------!!!
 module.exports.register = async function (req, res) {
-    res.render('index');
+
     //Kullanıcı Oluşturmadan girilen değerleri doğrulama
     const { error } = registerValidation(req.body);
-    if (error) return console.log(error.details[0].message);
+    if (error) return res.status(400).send(error.details[0].message);
 
     //Kullanıcı Kayıtlımı
     const emailExist = await User.findOne({ mail: req.body.mail });
-    if (emailExist) return console.log('User already exist');
+    if (emailExist) return res.status(400).send('User Already Exist!');
 
     //şifreyi Hashleme
     const salt = await bcrypt.genSalt(10);
@@ -25,13 +25,15 @@ module.exports.register = async function (req, res) {
         mail: req.body.mail
     });
     try {
-        await user.save();
-        console.log("kullanıcı kaydedildi");
+        const savedUser = await user.save();
+        res.send(savedUser);
 
     } catch (err) {
-        console.log(err);
+        res.status(400).send(err);
     }
 
+
+    res.render('index');
 }
 
 

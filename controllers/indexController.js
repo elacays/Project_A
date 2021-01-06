@@ -10,27 +10,25 @@ module.exports.index = function (req, res) {
 
 //!!!--------Login--------!!!
 module.exports.login = async function (req, res) {
-    res.render('index');
-
 
     //Kullanıcı Giriş yapmadan girilen değerleri doğrulama
     const { error } = loginValidation(req.body);
-    if (error) return console.log(error.details[0].message);
+    if (error) return res.status(400).send(error.details[0].message);
 
     //Kullanıcı Kayıtlımı
     const user = await User.findOne({ mail: req.body.mail });
-    if (!user) return console.log('Email or Password is wrong');
+    if (!user) return res.status(400).send('Email or Password is wrong')
 
     //Şifre-mail doğrulama
     const validPass = await bcrypt.compare(req.body.password, user.password);
-    if (!validPass) return console.log("Invalid Password");
+    if (!validPass) return res.status(400).send('Email or Password is wrong')
 
     //Giriş Tokeni oluşturma
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
 
     //token ismiyle işlem yapılıyor
-    //res.header('auth-token', token);
+    res.header('auth-token', token);
     console.log(token);
 
-
+    res.render('index');
 }
