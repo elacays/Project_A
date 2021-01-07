@@ -29,8 +29,13 @@
         <li><a href="/">Home</a></li>
         <li><a href="/rules">Rules</a></li>
         <li><a href="/test">Test</a></li>
+        <%if(!a){%>
         <li><button onclick="openForm()" class="loginButton">
         <span>Login</span></button></li>
+        <%}else{%>
+        <li><button onclick="openCard()" class="loginButton">
+        <span>PROFİL</span></button></li>
+        <%}%>
     </ul>
     <div class="burger">
         <div class="line1"></div>
@@ -80,7 +85,7 @@ navSlide();
             <form id="loginForm" class="login-group" action="/login" method="POST">
                 <div class="form-group">
                 <!------Mail textbox------->
-                    <label for="exampleInputEmail1">eMail</label>
+                    <label for="exampleInputEmail1">Email</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" name="mail" aria-describedby="emailHelp"
                         placeholder="Enter email..">
                 </div>
@@ -107,9 +112,14 @@ navSlide();
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password..">
                 </div>
+                <!------Şifre doğrulama-----
+                <div class="form-group">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password..">
+                </div>-->
                 <!------Mail textbox------->
                 <div class="form-group">
-                    <label for="exampleInputEmail1">eMail</label>
+                    <label for="exampleInputEmail1">Email</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" name="mail" aria-describedby="emailHelp"
                         placeholder="Enter email..">
                 </div>
@@ -117,16 +127,25 @@ navSlide();
             </form>
         </div>
         <!--Profil kartı-->
-        <div class="userForm">
+        
+         
+        <div class="userForm" id="userForm">
             <h2><label for="male">Elacays</label></h2>
             <h5><label for="male" style="color:green;">Online</label></h5>
             <img id="avatar" src="../public/images/avatar.png" alt="Avatar">
             <div class="profilButtons">
-                <button type="button" class="btn btn-danger">Test</button>
-                <button type="button" class="btn btn-warning">History</button>
-                <button type="button" class="btn btn-info">Options</button>
+                <form id="logoutForm" action="/test" method="GET">
+                <button type="submit" class="btn btn-warning">Test</button>
+                </form>
+                <form id="logoutForm" action="/test" method="GET">
+                <button type="submit" class="btn btn-info">Options</button>
+                </form>
+                <form id="logoutForm" action="/login/logout" method="GET">
+                <button type="submit" class="btn btn-danger">Quit</button>
+                </form>
             </div>
         </div>
+
         <script>
             //login kısmını gösterip kayıt kısmını gizliyor
             function loginPage() {
@@ -150,6 +169,14 @@ navSlide();
                 document.getElementById("hiddenButton").style.display = "none";
                 document.getElementById("formBoxId").style.display = "none";
 
+            }
+            function openCard() {
+                   
+                if(document.getElementById("userForm").style.display == "inline"){
+                    document.getElementById("userForm").style.display = "none"
+                }else{
+                    document.getElementById("userForm").style.display = "inline"; 
+                }
             }
 
         </script>

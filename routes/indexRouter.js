@@ -3,11 +3,11 @@ const express = require('express')
 const router = express.Router();
 
 //indexController Çağrılıyor
-const ctrlIndex = require('../controllers/indexController');
+const { login, logout, index } = require('../controllers/indexController');
 
 
-router.get('/', ctrlIndex.index);
-router.post('/', ctrlIndex.login);
-router.get('/logout', ctrlIndex.logout);
+router.get('/', index);
+router.post('/', login,);
+router.get('/logout', logout);
 
 module.exports = router;

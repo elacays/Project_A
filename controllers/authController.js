@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 
 
 //!!!--------Register--------!!!
-module.exports.register = async function (req, res) {
+const register = async function (req, res) {
 
     //Kullanıcı Oluşturmadan girilen değerleri doğrulama
     const { error } = registerValidation(req.body);
@@ -34,7 +34,7 @@ module.exports.register = async function (req, res) {
     }
 
 
-    res.render('index');
+    res.redirect('/');
 }
 
-
+module.exports = { register }

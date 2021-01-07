@@ -31,8 +31,8 @@
 
 
 .form-box{
-    width: 500px;
-    height: 650px;
+    width: 400px;
+    height: 600px;
     position: relative;
     margin: 6% auto;
     background: #fff;
@@ -46,7 +46,7 @@
 }
 .userForm{
     width: 500px;
-    height: 350px;
+    min-height: 350px;
     top: 50px;
     border-radius: 10px;
     position: relative;
@@ -59,9 +59,15 @@
     text-align: center;
     font-family: sans-serif;
     background-color: #f8f9fa;
-
+    display: none;
 
 }
+
+#logoutForm{
+    display: inline-block;
+}
+
+
 .button-box{
     width: 300px 100%;
     margin: 35px auto;
@@ -69,8 +75,6 @@
 
 }
 .profilButtons{
-    width: 100%;
-    height: 100%;
     position: relative;
     margin-top: 50px;
 }

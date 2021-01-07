@@ -3,14 +3,16 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
+let a;
 
-module.exports.index = function (req, res) {
-    res.render('index');
+
+const index = function (req, res) {
+
+    res.render('index', { a });
 }
 
 //!!!--------Login--------!!!
-module.exports.login = async function (req, res) {
-
+const login = async function (req, res,) {
     //Kullanıcı Giriş yapmadan girilen değerleri doğrulama
     const { error } = loginValidation(req.body);
     if (error) return res.status(400).send(error.details[0].message);
@@ -27,18 +29,20 @@ module.exports.login = async function (req, res) {
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
 
     //token ismiyle işlem yapılıyor
-    res.cookie('auth-token', token);
-    console.log(token);
+    res.cookie('token', token, { maxAge: 900000, httpOnly: true });
+    a = true
 
-    res.render('index');
+    res.redirect('/');
 }
 
-module.exports.logout = async function (req, res) {
+const logout = async function (req, res) {
 
-    const logout = res.cookie('auth-token', '', 1);
-
+    const logout = res.clearCookie('token');
+    a = undefined;
     res.redirect('/');
 
     return logout;
 
 }
+
+module.exports = { logout, login, index }
