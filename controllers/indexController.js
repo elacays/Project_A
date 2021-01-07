@@ -27,8 +27,18 @@ module.exports.login = async function (req, res) {
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
 
     //token ismiyle işlem yapılıyor
-    res.header('auth-token', token);
+    res.cookie('auth-token', token);
     console.log(token);
 
     res.render('index');
+}
+
+module.exports.logout = async function (req, res) {
+
+    const logout = res.cookie('auth-token', '', 1);
+
+    res.redirect('/');
+
+    return logout;
+
 }
