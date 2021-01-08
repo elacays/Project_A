@@ -7,10 +7,6 @@ const cookieParser = require('cookie-parser');
 const db = require('./models/db');
 const ejsLayouts = require("express-ejs-layouts")
 const bodyparser = require('body-parser');
-const postRoute = require('./posts')
-const verifyCheck = require('./controllers/verifyToken')
-
-
 
 
 
@@ -27,7 +23,7 @@ app.use(cookieParser());
 //verinin işe yarar kısmını kullanabilmek için body parser kullanılıyor
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
-app.use('/asd', postRoute);
+
 
 
 
@@ -36,7 +32,6 @@ app.use('/asd', postRoute);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/public/views'));
 
-//app.get('*', verifyCheck)
 
 
 //router modülü çağrılıp direk çalıştırılıyor
