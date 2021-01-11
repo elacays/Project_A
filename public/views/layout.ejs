@@ -33,8 +33,9 @@
         <li><button onclick="openForm()" class="loginButton">
         <span>Login</span></button></li>
         <%}else{%>
-        <li><button onclick="openCard()" class="loginButton">
-        <span>PROFİL</span></button></li>
+        <div class="navLogo">
+        <li><img id="avatar" src="../public/images/avatar.png" alt="Avatar" onclick="openCard()"></li>
+        </div>
         <%}%>
     </ul>
     <div class="burger">
