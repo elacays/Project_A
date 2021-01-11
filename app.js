@@ -25,6 +25,11 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
 
+app.get('*', function (req, res, next) {
+    res.locals.user = req.cookies.token;
+    next();
+});
+
 
 
 

@@ -3,10 +3,13 @@ const express = require('express');
 const router = express.Router();
 
 //Controller Çağrılıyor
-const ctrlAuth = require('../controllers/authController');
+const { login, logout, register } = require('../controllers/authController');
 
 
-router.post('/', ctrlAuth.register);
+router.post('/', register);
+router.post('/login', login);
+router.get('/logout', logout);
+
 
 
 module.exports = router;

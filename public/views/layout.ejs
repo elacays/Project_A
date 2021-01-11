@@ -29,7 +29,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="/rules">Rules</a></li>
         <li><a href="/test">Test</a></li>
-        <%if(!a){%>
+        <%if(!user){%>
         <li><button onclick="openForm()" class="loginButton">
         <span>Login</span></button></li>
         <%}else{%>
@@ -82,7 +82,7 @@ navSlide();
                 <button type="button" class="btn btn-success" onclick="registerPage()">Register</button>
             </div>
             <!---------------Giriş Kısmı---------------->
-            <form id="loginForm" class="login-group" action="/login" method="POST">
+            <form id="loginForm" class="login-group" action="/register/login" method="POST">
                 <div class="form-group">
                 <!------Mail textbox------->
                     <label for="exampleInputEmail1">Email</label>
