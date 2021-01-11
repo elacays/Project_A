@@ -64,7 +64,6 @@ const logout = async function (req, res) {
 
     const logout = res.clearCookie('token');
     res.redirect('/');
-    res.locals.user = null;
     return logout;
 
 }

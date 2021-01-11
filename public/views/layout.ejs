@@ -23,7 +23,7 @@
 <body>
     <nav>
     <div class="logo">
-        <h4>ProjectA</h4>
+        <p>LOGO</p>
     </div>
     <ul class="nav-links">
         <li><a href="/">Home</a></li>
@@ -84,46 +84,72 @@ navSlide();
             <!---------------Giriş Kısmı---------------->
             <form id="loginForm" class="login-group" action="/register/login" method="POST">
                 <div class="form-group">
-                <!------Mail textbox------->
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="mail" aria-describedby="emailHelp"
-                        placeholder="Enter email..">
+                    <div class="form">
+                        <input type="mail" name="mail" autocomplete="off"  required />
+                        <label for="name" class="label-name">
+                            <span class="content-name">Email</span>
+                        </label>
+                    </div>
                 </div>
                 <!------Şifre textbox------->
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password..">
+                    <div class="form">
+                        <input type="password" name="password" autocomplete="off"  required />
+                        <label for="name" class="label-name">
+                            <span class="content-name">Password</span>
+                        </label>
+                    </div>
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Remember Me!</label>
                 </div>
+                <div class="submitDiv">
                 <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
             <!---------------Kayıt Kısmı---------------->
             <form id="registerForm" class="register-group" action="/register" method="POST">
+            
             <!------İsim textbox------->
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nick Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Nick Name..">
+                    <div class="form">
+                        <input type="text" name="name" autocomplete="off"  required />
+                        <label for="name" class="label-name">
+                            <span class="content-name">Name</span>
+                        </label>
+                    </div>
                 </div>
                 <!------Şifre textbox------->
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password..">
+                    <div class="form">
+                        <input type="password" name="password" autocomplete="off"  required />
+                        <label for="name" class="label-name">
+                            <span class="content-name">Password</span>
+                        </label>
+                    </div>
                 </div>
-                <!------Şifre doğrulama-----
+                 <!------Şifre textbox-----
                 <div class="form-group">
-                    <label for="password">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password..">
+                    <div class="form">
+                        <input type="text" name="password" autocomplete="off"  required />
+                        <label for="name" class="label-name">
+                            <span class="content-name">Password</span>
+                        </label>
+                    </div>
                 </div>-->
                 <!------Mail textbox------->
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="mail" aria-describedby="emailHelp"
-                        placeholder="Enter email..">
+               <div class="form-group">
+                    <div class="form">
+                        <input type="mail" name="mail" autocomplete="off"  required />
+                        <label for="name" class="label-name">
+                            <span class="content-name">Email</span>
+                        </label>
+                    </div>
                 </div>
+                <div class="submitDiv">
                 <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
         </div>
         <!--Profil kartı-->
