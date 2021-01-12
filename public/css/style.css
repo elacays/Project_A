@@ -1,22 +1,24 @@
 html {
     width: 100%;
     height: 100%;
-  }
-  
-body{
+}
+
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     font-family: sans-serif;
-    background-image: url('../images/banner3.jpg');
+    background-image: url('../images/banner4.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
-  
-  .loginButton {
+
+
+
+.loginButton {
     position: relative;
     outline: none;
     text-decoration: none;
@@ -32,23 +34,33 @@ body{
     opacity: 1;
     background-color: transparent;
     border: 2px solid #ffffff;
-  }
-  .loginButton span {
+
+
+}
+
+.loginButton span {
     color: #ffffff;
     font-size: 12px;
     font-weight: 750;
     letter-spacing: 0.7px;
-  }
-  .loginButton:hover {
-    background: #008C8C;
-  }
-  
-  .submitDiv{
-      position: relative;
-      top: 20px;
-  }
- 
+}
 
+.loginButton:hover {
+    background-color: #2c255b;
+}
+
+.submitDiv {
+    position: relative;
+    top: 20px;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
 
 
 #loginButton {
@@ -59,10 +71,11 @@ body{
     margin: auto;
     padding: 0px;
 
-    
-    
+
+
 }
-#hiddenButton{
+
+#hiddenButton {
     position: absolute;
     right: 20px;
     height: 25px;
@@ -73,67 +86,72 @@ body{
 
 
 /*----- Login Formu -----*/
-.form-box{
+.form-box {
     width: 400px;
     height: 550px;
     position: relative;
     margin: 6% auto;
-    background: #fff;
+    background: #1f1d42;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 20px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #1f1d42;
 
     display: none;
 }
-.button-box{
+
+.button-box {
     width: 300px 100%;
     margin: 35px auto;
     position: relative;
 
 }
+
 /*----- Profil Kartı -----*/
-.userForm{
+.userForm {
     width: 500px;
     min-height: 350px;
     top: 50px;
     border-radius: 10px;
     position: relative;
     margin: 6% auto;
-    background: #fff;
+    color: white;
     padding-bottom: 30px;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 20px;
     text-align: center;
     font-family: sans-serif;
-    background-color: #f8f9fa;
+    background-color: #1f1d42;
     display: none;
 
 }
 
-#logoutForm{
+#logoutForm {
     display: inline-block;
 }
 
 
 
-.profilButtons{
+.profilButtons {
     position: relative;
     margin-top: 50px;
 }
-.register-group{
+
+.register-group {
     display: none;
-    
+
 }
-.strings{
+
+.strings {
     margin: auto;
     padding-top: 50px;
     text-align: center;
-    
+
 }
-#hiddenButton{
+
+#hiddenButton {
     display: none;
 }
 
@@ -142,9 +160,10 @@ img {
     width: 100px;
     height: 100px;
     position: relative;
-  }
+    cursor: pointer;
+}
 
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -162,21 +181,22 @@ nav {
     font-family: "Poppins", sans-serif;
     font-size: 35px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-    
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .2);
+
 }
 
 .logo {
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 5px;
-    
+
 }
-.logo p{
+
+.logo p {
     font-family: sans-serif;
 }
 
-.navLogo img{
+.navLogo img {
     width: 50px;
     height: 50px;
 }
@@ -220,9 +240,9 @@ nav {
 @media screen and (max-width: 768px) {
     body {
         overflow-x: hidden;
-        
+
     }
-    
+
     .nav-links {
         position: fixed;
         right: 0px;
@@ -236,24 +256,25 @@ nav {
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
         /*background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
-        
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/opacity/see-through */
+
     }
-    
+
     .nav-links li {
         opacity: 0;
-        
+
     }
-    
+
     .burger {
         display: block;
         cursor: pointer;
-        
+
     }
 }
 
 .nav-active {
-        transform: translateX(0%);
+    transform: translateX(0%);
 }
 
 @keyframes navLinkFade {
@@ -261,6 +282,7 @@ nav {
         opacity: 0;
         transform: translateX(50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -284,36 +306,39 @@ nav {
 
 
 
-.form{
+.form {
     width: 100%;
     position: relative;
     height: 50px;
     overflow: hidden;
-    
+    color: white;
+
 }
 
-.form input{
+.form input {
     width: 100%;
     height: 100%;
     padding-top: 20px;
     border: none;
     outline: none;
-    
+    background-color: #1f1d42;
+    color: white;
+
 }
 
-.form label{
+.form label {
     position: absolute;
     bottom: -8px;
-    left:0%;
+    left: 0%;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     margin-top: 10px;
 
 }
 
-.form label::after{
+.form label::after {
     content: "";
     position: absolute;
     left: 0px;
@@ -325,20 +350,21 @@ nav {
     transition: transform 0.3s ease;
 }
 
-.content-name{
+.content-name {
     position: absolute;
-    bottom:5px;
+    bottom: 5px;
     left: 0px;
     transition: all 0.3s ease;
 }
 
-.form input:focus + .label-name .content-name,
-.form input:valid  + .label-name .content-name{
+.form input:focus+.label-name .content-name,
+.form input:valid+.label-name .content-name {
     transform: translateY(-125%);
     font-size: 14px;
-    color:  #5fa8d3;
+    color: #5fa8d3;
 }
 
-.form input:focus + .label-name::after, .form input:valid + .label-name::after{
+.form input:focus+.label-name::after,
+.form input:valid+.label-name::after {
     transform: translateX(0%);
 }

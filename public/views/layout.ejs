@@ -23,7 +23,7 @@
 <body>
     <nav>
     <div class="logo">
-        <p>LOGO</p>
+        <p><a href="/">LOGO</a></p>
     </div>
     <ul class="nav-links">
         <li><a href="/">Home</a></li>
@@ -92,6 +92,7 @@ navSlide();
                         </label>
                     </div>
                 </div>
+                
                 <!------Şifre textbox------->
                 <div class="form-group">
                     <div class="form">
@@ -100,10 +101,6 @@ navSlide();
                             <span class="content-name">Password</span>
                         </label>
                     </div>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remember Me!</label>
                 </div>
                 <div class="submitDiv">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -118,6 +115,15 @@ navSlide();
                         <input type="text" name="name" autocomplete="off"  required />
                         <label for="name" class="label-name">
                             <span class="content-name">Name</span>
+                        </label>
+                    </div>
+                </div>
+                <!------Mail textbox------->
+               <div class="form-group">
+                    <div class="form">
+                        <input type="mail" name="mail" autocomplete="off"  required />
+                        <label for="name" class="label-name">
+                            <span class="content-name">Email</span>
                         </label>
                     </div>
                 </div>
@@ -139,15 +145,7 @@ navSlide();
                         </label>
                     </div>
                 </div>-->
-                <!------Mail textbox------->
-               <div class="form-group">
-                    <div class="form">
-                        <input type="mail" name="mail" autocomplete="off"  required />
-                        <label for="name" class="label-name">
-                            <span class="content-name">Email</span>
-                        </label>
-                    </div>
-                </div>
+                
                 <div class="submitDiv">
                 <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
@@ -157,7 +155,7 @@ navSlide();
         
          
         <div class="userForm" id="userForm">
-            <h2><label for="male">Elacays</label></h2>
+            <h2><label for="male"><%= user  %></label></h2>
             <h5><label for="male" style="color:green;">Online</label></h5>
             <img id="avatar" src="../public/images/avatar.png" alt="Avatar">
             <div class="profilButtons">
